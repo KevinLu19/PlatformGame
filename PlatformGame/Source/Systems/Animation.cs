@@ -14,6 +14,8 @@ public class Animation
 	private float _frameTimeLeft;
 	private bool _active = true;
 
+	private float _sprite_scale; 
+
 	public Animation(Texture2D texture, int framesX, int framesY, float frameTime, int row = 1)
 	{
 		_texture = texture;
@@ -61,7 +63,9 @@ public class Animation
 
 	public void Draw(Vector2 pos)
 	{
-		Globals.SpriteBatch.Draw(_texture, pos, _sourceRectangles[_frame], Color.White, 0, Vector2.Zero, Vector2.One, SpriteEffects.None, 1);
+		_sprite_scale = 2.5f;
+
+		Globals.SpriteBatch.Draw(_texture, pos, _sourceRectangles[_frame], Color.White, 0, Vector2.Zero, _sprite_scale, SpriteEffects.None, 1);
 	}
 
 }

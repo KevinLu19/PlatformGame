@@ -7,26 +7,27 @@ namespace PlatformGame;
 
 public class King : ISprite
 {
-	private Vector2 _position = new(100, 100);
+	private Vector2 _position = new(120, 345);	// Starting Position
 	private readonly float _speed = 200f;
 	private readonly AnimationManager _anim_manager = new();
 
+	// Default sprite animation is Idle until a movement has been inputted.
 	public King()
 	{
-		var king_texture = Globals.Content.Load<Texture2D>("Attack");
+		var king_texture = Globals.Content.Load<Texture2D>("Idle");
 
 		// This allows the king sprite to move in 8 different directions. 
 		/*
 			Vector2(x,y) -> This is the direction coordination
 		 */
-		_anim_manager.AddAnimation(new Vector2(0, 1), new(king_texture, 3, 1, 0.1f));
-		_anim_manager.AddAnimation(new Vector2(-1,0), new(king_texture, 3, 1, 0.1f));
-		_anim_manager.AddAnimation(new Vector2(1, 0), new(king_texture, 3, 1, 0.1f));
-		_anim_manager.AddAnimation(new Vector2(0, -1), new(king_texture, 3, 1, 0.1f));
-		_anim_manager.AddAnimation(new Vector2(-1, 1), new(king_texture, 3, 1, 0.1f));
-		_anim_manager.AddAnimation(new Vector2(-1, -1), new(king_texture, 3, 1, 0.1f));
-		_anim_manager.AddAnimation(new Vector2(1, 1), new(king_texture, 3, 1, 0.1f));
-		_anim_manager.AddAnimation(new Vector2(1, -1), new(king_texture, 3, 1, 0.1f));
+		_anim_manager.AddAnimation(new Vector2(0, 1), new(king_texture, 11, 1, 0.1f));
+		_anim_manager.AddAnimation(new Vector2(-1,0), new(king_texture, 11, 1, 0.1f));
+		_anim_manager.AddAnimation(new Vector2(1, 0), new(king_texture, 11, 1, 0.1f));
+		_anim_manager.AddAnimation(new Vector2(0, -1), new(king_texture, 11, 1, 0.1f));
+		_anim_manager.AddAnimation(new Vector2(-1, 1), new(king_texture, 11, 1, 0.1f));
+		_anim_manager.AddAnimation(new Vector2(-1, -1), new(king_texture, 11, 1, 0.1f));
+		_anim_manager.AddAnimation(new Vector2(1, 1), new(king_texture, 11, 1, 0.1f));
+		_anim_manager.AddAnimation(new Vector2(1, -1), new(king_texture, 11, 1, 0.1f));
 	}
 
 	public void Update()
