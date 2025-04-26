@@ -5,6 +5,9 @@ using Microsoft.Xna.Framework.Input;
 
 namespace PlatformGame;
 
+// When player not moving -> idle animation
+// Fix animation when moving any direction (up, down, left, right), the animation is not smooth.
+
 public class King : ISprite
 {
 	private Vector2 _position = new(120, 345);	// Starting Position
